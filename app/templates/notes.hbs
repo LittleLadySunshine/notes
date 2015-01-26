@@ -1,4 +1,4 @@
-<div id="container">
+<section class="newNote">
   <div id="inputNote">
     {{textarea placeholder="Add a title!" rows="1" cols="100" value=titleCopy }}
     {{textarea placeholder="Add a note!" rows="20" cols="100" value=noteCopy}}
@@ -9,18 +9,19 @@
     {{noteCopy}}
   </div>
 
+</section>
+
+<hr>
 
 
-  <hr>
-
-
-  <div id="outputNote">
-    {{#each note in model}}
+<section class="outputNote">
+  {{#each note in model}}
+  <div class="note">
     <strong>{{note.title}}</strong> <br>
-    {{note.body}}
-    <br>
-    <br>
-    {{/each}}
-    {{outlet}}
+    <p>
+      {{note.body}}
+    </p>
+    <button {{action 'deleteNote'}}> Delete</button>
   </div>
-</div>
+  {{/each}}
+</section>
