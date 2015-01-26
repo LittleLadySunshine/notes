@@ -1,5 +1,5 @@
 <div id="inputNote">
-  {{textarea placeholder="Add a title!" rows="1" cols="100" }}
+  {{textarea placeholder="Add a title!" rows="1" cols="100" value=titleCopy }}
   {{textarea placeholder="Add a note!" rows="20" cols="100" value=noteCopy}}
   <button {{action 'newNote'}}>Save Note</button>
 </div>
@@ -7,8 +7,10 @@
 
 <div id="outputNote">
   {{#each note in model}}
-  {{note.title}}
+  {{note.title}} <br>
   {{note.body}}
+  <br>
+  <br>
   {{/each}}
   {{outlet}}
 </div>

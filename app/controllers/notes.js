@@ -4,8 +4,8 @@ export default Ember.ArrayController.extend({
   actions: {
     newNote: function() {
       var body = this.get('noteCopy');
-
-      var note = this.store.createRecord('note', { body: body });
+      var title = this.get('titleCopy')
+      var note = this.store.createRecord('note', { title: title, body: body });
       this.set('noteCopy', '');
       note.save();
     }
