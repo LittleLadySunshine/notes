@@ -1,16 +1,26 @@
-<div id="inputNote">
-  {{textarea placeholder="Add a title!" rows="1" cols="100" value=titleCopy }}
-  {{textarea placeholder="Add a note!" rows="20" cols="100" value=noteCopy}}
-  <button {{action 'newNote'}}>Save Note</button>
-</div>
+<div id="container">
+  <div id="inputNote">
+    {{textarea placeholder="Add a title!" rows="1" cols="100" value=titleCopy }}
+    {{textarea placeholder="Add a note!" rows="20" cols="100" value=noteCopy}}
+    <button {{action 'newNote'}}>Add Note</button>
+  </div>
+
+  <div id="watchingNote">
+    {{noteCopy}}
+  </div>
 
 
-<div id="outputNote">
-  {{#each note in model}}
-  {{note.title}} <br>
-  {{note.body}}
-  <br>
-  <br>
-  {{/each}}
-  {{outlet}}
+
+  <hr>
+
+
+  <div id="outputNote">
+    {{#each note in model}}
+    <strong>{{note.title}}</strong> <br>
+    {{note.body}}
+    <br>
+    <br>
+    {{/each}}
+    {{outlet}}
+  </div>
 </div>
