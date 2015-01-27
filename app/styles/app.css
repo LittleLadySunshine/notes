@@ -57,3 +57,8 @@ hr {
   border: 1px solid white;
   background: gray;
 }
+
+.note:nth-of-type(even) {
+  margin-left: 19px;
+
+}

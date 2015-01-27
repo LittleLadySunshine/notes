@@ -8,6 +8,13 @@ export default Ember.ArrayController.extend({
       var note = this.store.createRecord('note', { title: title, body: body });
       this.set('noteCopy', '');
       note.save();
+    },
+
+    deleteNote: function (id) {
+      var note = this.store.find('note', id).then(function(note) {
+        note.deleteRecord();
+        note.save();
+      });
     }
   }
 });
