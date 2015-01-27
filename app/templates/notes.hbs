@@ -1,27 +1,20 @@
 <section class="newNote">
-  <div id="inputNote">
-    {{textarea placeholder="Add a title!" rows="1" cols="100" value=titleCopy }}
-    {{textarea placeholder="Add a note!" rows="20" cols="100" value=noteCopy}}
-    <button {{action 'newNote'}}>Add Note</button>
-  </div>
-
-  <div id="watchingNote">
-    {{noteCopy}}
-  </div>
-
+  {{textarea placeholder="Add a note!" value=noteCopy}}
 </section>
+
+<div id="watchingNote">
+  {{noteCopy}}
+  <button {{action 'newNote'}}>Add Note</button>
+</div>
+
 
 <hr>
 
-
-<section class="outputNote">
   {{#each note in model}}
-  <div class="note">
-    <strong>{{note.title}}</strong> <br>
+  <article class="note">
     <p>
       {{note.body}}
     </p>
-    <button {{action 'deleteNote'}}> Delete</button>
-  </div>
+    <button {{action 'deleteNote' note.id}}> Delete</button>
+  </article>
   {{/each}}
-</section>

@@ -3,71 +3,57 @@
 }
 
 html, body {
-  margin: 20px;
-  background: #FA8B60;
-}
-
-
-.bar .title {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 0;
-  overflow: hidden;
-  margin: 0 10px;
-  min-width: 30px;
-  height: 43px;
-  text-align: center;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 44px;
-}
-
-.bar.bar-light .title {
-  background: #E6E6E6;
-  font-family: Georgia, serif;
-  font-size: 40px;
-  padding: 5px;
-  border: 1px solid #BDBDBD;
-
-}
-
-nav {
-  text-align: center;
-  padding: 20px;
-  background: #FA8B60;
-}
-
-
-nav button {
-  width: 50px;
-  cursor:pointer;
-}
-
-#inputNote {
-  float: left;
-  width: 50%;
-  min-width: 60px;
-  height: 100%;
-
-}
-
-#outputNote {
-  float: left;
-  width: 50%;
-  min-width: 60px;
-
-}
-
-#watchingNote {
-  background: #90C5A9;
+  margin: 5px;
+  background: black;
+  color: white;
+  margin-left: 120px;
+  margin-right: 120px;
 }
 
 textarea {
-  background: #7A9A95;
-  color: #3F2860;
-  font-type: serif;
+  display: block;
+  float: left;
+  width: 49%;
+  min-height: 100px;
+  padding: 20px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+
+#watchingNote {
+  display: block;
+  float: right;
+  width: 49%;
+  min-height: 100px;
+  padding: 20px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  background: gray;
+}
+
+button {
+  padding: 5px;
+  float: right;
+  border: 1px solid white;
+  background: white;
+  color: black;
+}
+
+button:focus {
+  outline: none;
+  border: 2px solid red;
+}
+
+hr {
+  width: 100%;
+}
+
+.note {
+  display: block;
+  float: left;
+  width: 49%;
+  min-height: 100px;
+  padding: 20px;
+  border: 1px solid white;
+  background: gray;
 }
