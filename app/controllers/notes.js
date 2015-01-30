@@ -17,11 +17,10 @@ export default Ember.ArrayController.extend({
       }
     },
 
-    deleteNote: function (id) {
+    deleteNote: function(id) {
       this.store.find('note', id).then(function(note) {
-        note.deleteRecord();
-        note.save().then(function(){
-          this.flashMessage('success', 'Congratulations! Your changes have been saved');
+        note.destroyRecord().then(function(){
+          this.flashMessage('success', 'Woot! That notes is gone forever.');
         }.bind(this));
       }.bind(this));
     }

@@ -14,11 +14,6 @@
 
 <hr>
 
-  {{#each note in model}}
-  <article class="note">
-    <p>
-      {{note.body}}
-    </p>
-    <button {{action 'deleteNote' note.id}}> Delete</button>
-  </article>
-  {{/each}}
+{{#each note in model}}
+  {{local-note body=note.body id=note.id deleteNote="deleteNote"}}
+{{/each}}
