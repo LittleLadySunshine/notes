@@ -17,8 +17,8 @@ export default Ember.ArrayController.extend({
       }
     },
 
-    deleteNote: function(id) {
-      this.store.find('note', id).then(function(note) {
+    deleteNote: function(remove) {
+      this.store.find('note', remove).then(function(note) {
         note.destroyRecord().then(function(){
           this.flashMessage('success', 'Woot! That notes is gone forever.');
         }.bind(this));
