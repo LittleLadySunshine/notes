@@ -15,5 +15,5 @@
 <hr>
 
 {{#each note in model}}
-  {{local-note body=note.body remove=note.id deleteNote="deleteNote"}}
+  {{local-note body=note.body note=note deleteNote="deleteNote"}}
 {{/each}}
