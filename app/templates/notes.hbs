@@ -1,19 +1,28 @@
-<div class="flash-message">
-  <h2>{{message-queue}}</h2>
+
+<div class="flash-message">  <h2>{{message-queue}}</h2>
 </div>
 
 <section class="newNote">
-  {{textarea placeholder="Add a note!" value=noteCopy}}
+  <div class="inputNote">
+    <header>
+      <h2>Create a note!</h2>
+      {{textarea placeholder="Add a title!" value=titleCopy rows=1}}
+    </header>
+    <body>
+      {{textarea placeholder="Add a note!" value=noteCopy}}
+      <button {{action 'newNote'}}>Save</button>
+    </body>
+  </div>
+  <div class="previewNote">
+    <h2>{{titleCopy}}</h2>
+    <p>
+      {{noteCopy}}
+    </p>
+  </div>
 </section>
 
-<div id="watchingNote">
-  {{noteCopy}}
-  <button {{action 'newNote'}}>Add Note</button>
-</div>
-
-
-<hr>
-
-{{#each note in model}}
-  {{local-note body=note.body note=note deleteNote="deleteNote"}}
-{{/each}}
+<section class="notes">
+  {{#each note in model}}
+    {{local-note title=note.title body=note.body note=note editNote='editNote' updateNote='updateNote' deleteNote='deleteNote'}}
+  {{/each}}
+</section>

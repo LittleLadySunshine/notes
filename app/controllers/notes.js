@@ -17,12 +17,23 @@ export default Ember.ArrayController.extend({
       }
     },
 
-    deleteNote: function(note) {
-        note.deleteRecord();
-        note.save();
-          this.flashMessage('success', 'Woot! That note is gone forever.');
-        }.bind(this));
-      }.bind(this));
-    }
-  }
+  deleteNote: function(note) {
+      note.deleteRecord();
+      note.save();
+      this.flashMessage('success', 'Your note has been deleted!');
+  },
+
+  saveNote: function(note) {
+    var title = this.get('title;');
+    note.set('title', title);
+    note.save();
+  },
+
+  editNote: function() {
+    this.get('model').set('isEditing', true);
+    console.log('hit editNote');
+  },
+},
+isEditing: false,
+
 });
